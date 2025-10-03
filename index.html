@@ -3,11 +3,60 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mon site GitHub Pages</title>
-  <link rel="stylesheet" href="style.css">
+  <title>École de Maths en Ligne</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <h1>Bienvenue sur mon site 🚀</h1>
-  <p>Ceci est ma première page hébergée avec GitHub Pages.</p>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- HEADER + NAV -->
+  <header class="bg-blue-700 text-white shadow">
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <h1 class="text-xl font-bold">École de Maths en Ligne</h1>
+      <nav>
+        <ul class="flex space-x-6">
+          <li><a href="index.html" class="hover:underline">Accueil</a></li>
+          <li><a href="about.html" class="hover:underline">À propos</a></li>
+          <li><a href="#contact" class="hover:underline">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- SECTION HERO -->
+  <section class="bg-blue-50 py-20 text-center">
+    <h2 class="text-3xl font-bold mb-4">Apprenez les maths en ligne 🚀</h2>
+    <p class="text-lg mb-6">Cours interactifs, exercices corrigés et accompagnement personnalisé.</p>
+    <a href="#contact" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-800">Nous contacter</a>
+  </section>
+
+  <!-- SECTION CONTENU -->
+  <main class="container mx-auto p-6 grid md:grid-cols-3 gap-6">
+    <div class="bg-white rounded-lg shadow p-6">
+      <h3 class="text-xl font-semibold mb-2">Cours</h3>
+      <p>Des cours clairs et progressifs pour comprendre les bases et aller plus loin.</p>
+    </div>
+    <div class="bg-white rounded-lg shadow p-6">
+      <h3 class="text-xl font-semibold mb-2">Exercices</h3>
+      <p>Des exercices interactifs avec corrections détaillées pour progresser.</p>
+    </div>
+    <div class="bg-white rounded-lg shadow p-6">
+      <h3 class="text-xl font-semibold mb-2">Suivi</h3>
+      <p>Un accompagnement adapté à votre rythme et vos objectifs.</p>
+    </div>
+  </main>
+
+  <!-- SECTION CONTACT -->
+  <section id="contact" class="bg-gray-200 py-10">
+    <div class="container mx-auto text-center">
+      <h3 class="text-2xl font-bold mb-4">Contactez-nous</h3>
+      <p class="mb-4">Envoyez-nous un message à <a href="mailto:contact@ecoledemaths.fr" class="text-blue-600 underline">contact@ecoledemaths.fr</a></p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-blue-700 text-white text-center py-4">
+    © 2025 École de Maths en Ligne - Tous droits réservés
+  </footer>
+
 </body>
 </html>
