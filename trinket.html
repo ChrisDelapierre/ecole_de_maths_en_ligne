@@ -2,20 +2,37 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+  <title>École de Maths en Ligne</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <title>Mon Trinket Python</title>
 </head>
 <body>
-  <h1>Trinket Maths en ligne</h1>
+   <!-- HEADER + NAV -->
+  <header class="bg-blue-700 text-white shadow">
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <h1 class="text-xl font-bold">École de Maths en Ligne</h1>
+      <nav>
+        <ul class="flex space-x-6">
+          <li><a href="index.html" class="hover:underline">Accueil</a></li>
+          <li><a href="about.html" class="hover:underline">À propos</a></li>
+          <li><a href="#contact" class="hover:underline">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
   <!-- Ton iframe -->
   <iframe src="https://trinket.io/embed/python3/57ff9ed7c499"
           width="100%"
-          height="356"
+          height="600"
           frameborder="0"
           marginwidth="0"
           marginheight="0"
           allowfullscreen>
   </iframe>
-
+<!-- FOOTER -->
+  <footer class="bg-blue-700 text-white text-center py-4">
+    © 2025 École de Maths en Ligne - Tous droits réservés
+  </footer>
 </body>
 </html>
