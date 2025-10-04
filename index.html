@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>École de Maths en Ligne</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("SrlIr4W6aUch1ayEs"); // ⚡ Remplace par ton vrai User ID EmailJS
+    })();
+  </script>
 </head>
 <body class="bg-gray-100 text-gray-800">
 
@@ -39,24 +46,43 @@
       <h3 class="text-xl font-semibold mb-2">Exercices</h3>
       <p>Des exercices interactifs avec corrections détaillées pour progresser.</p>
     </div>
-      <a href="trinket.html" class="block">
-    <div class="bg-white rounded-lg shadow p-6 hover:shadow-lg transition">
-      <h3 class="text-xl font-semibold mb-2">Python en ligne</h3>
-      <p>Des outils pour faire tes exos plus facilement</p>
-    </div>
-  </a>
-
-    <!-- <div class="bg-white rounded-lg shadow p-6">
-      <h3 class="text-xl font-semibold mb-2">Suivi</h3>
-      <p>Un accompagnement adapté à votre rythme et vos objectifs.</p>
-    </div> -->
+    <a href="trinket.html" class="block">
+      <div class="bg-white rounded-lg shadow p-6 hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold mb-2">Python en ligne</h3>
+        <p>Des outils pour faire tes exos plus facilement</p>
+      </div>
+    </a>
   </main>
 
   <!-- SECTION CONTACT -->
   <section id="contact" class="bg-gray-200 py-10">
-    <div class="container mx-auto text-center">
-      <h3 class="text-2xl font-bold mb-4">Contactez-nous</h3>
-      <p class="mb-4">Envoyez-nous un message à <a href="mailto:contact@ecoledemaths.fr" class="text-blue-600 underline">contact@ecoledemaths.fr</a></p>
+    <div class="container mx-auto max-w-lg">
+      <h3 class="text-2xl font-bold mb-4 text-center">Contactez-nous</h3>
+      <p class="mb-6 text-center">Remplissez le formulaire ci-dessous pour nous envoyer un message 📩</p>
+
+      <form id="contactForm" class="bg-white p-6 rounded-lg shadow space-y-4">
+        <div>
+          <label class="block text-left font-medium mb-1">Votre nom</label>
+          <input type="text" name="user_name" required
+            class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-600">
+        </div>
+        <div>
+          <label class="block text-left font-medium mb-1">Votre email</label>
+          <input type="email" name="user_email" required
+            class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-600">
+        </div>
+        <div>
+          <label class="block text-left font-medium mb-1">Message</label>
+          <textarea name="message" rows="5" required
+            class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-600"></textarea>
+        </div>
+        <button type="submit"
+          class="w-full bg-blue-600 text-white font-semibold py-2 rounded-lg hover:bg-blue-800 transition">
+          Envoyer
+        </button>
+      </form>
+
+      <p id="statusMessage" class="mt-4 text-center font-semibold"></p>
     </div>
   </section>
 
@@ -65,5 +91,24 @@
     © 2025 École de Maths en Ligne - Tous droits réservés
   </footer>
 
+  <!-- SCRIPT FORM -->
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const statusMessage = document.getElementById("statusMessage");
+
+      emailjs.sendForm("service_f2sboio", "template_a0tfnzk", this)
+        .then(() => {
+          statusMessage.textContent = "✅ Message envoyé avec succès !";
+          statusMessage.className = "text-green-600 font-semibold text-center";
+          this.reset();
+        }, (error) => {
+          statusMessage.textContent = "❌ Erreur lors de l'envoi : " + error.text;
+          statusMessage.className = "text-red-600 font-semibold text-center";
+        });
+    });
+  </script>
+
 </body>
 </html>
+
