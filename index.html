@@ -12,11 +12,28 @@
       emailjs.init("SrlIr4W6aUch1ayEs"); // ⚡ Remplace par ton vrai User ID EmailJS
     })();
   </script>
+
+    <style>
+    /* Définition de l'animation de clignotement */
+    @keyframes blink {
+      0%, 100% {
+        opacity: 1; /* Pleine visibilité au début et à la fin */
+      }
+      50% {
+        opacity: 0.3; /* Très transparent au milieu */
+      }
+    }
+    
+    /* Application de l'animation à une classe CSS */
+    .btn-blink {
+      animation: blink 3s ease-in-out infinite; /* Nom, durée, type de rythme, répétition */
+    }
+  </style>
 </head>
 <body class="bg-gray-100 text-gray-800">
 
   <!-- HEADER + NAV -->
-  <header class="bg-blue-700 text-white shadow">
+  <header class="bg-violet-700 text-white shadow">
     <div class="container mx-auto flex justify-between items-center p-4">
       <h1 class="text-xl font-bold">École de Maths en Ligne</h1>
       <nav>
@@ -32,8 +49,15 @@
   <!-- SECTION HERO -->
   <section class="bg-blue-50 py-20 text-center">
     <h2 class="text-3xl font-bold mb-4">Apprenez les maths en ligne 🚀</h2>
-    <p class="text-lg mb-6">Cours interactifs, exercices corrigés et accompagnement personnalisé.</p>
-    <a href="#contact" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-800">Nous contacter</a>
+    <p class="bg-primary text-lg mb-6">Accés gratuit à mon serveur Discord:</p>
+    <a href="https://discord.com/channels/1127205424370810902/1127205425012555873" 
+    class="w-24 h-24 inline-block hover:opacity-80 transition duration-300 focus:outline-none">
+  
+  <button class="w-full h-full p-0 bg-transparent border-none cursor-pointer">
+    <img src="discordd.jpeg" alt="Description du bouton" class="w-full h-full object-cover rounded-lg btn-blink">
+  </button>
+  
+</a>
   </section>
 
   <!-- SECTION CONTENU -->
@@ -46,19 +70,23 @@
       <h3 class="text-xl font-semibold mb-2">Exercices</h3>
       <p>Des exercices interactifs avec corrections détaillées pour progresser.</p>
     </div>
+    
     <a href="trinket.html" class="block">
       <div class="bg-white rounded-lg shadow p-6 hover:shadow-lg transition">
         <h3 class="text-xl font-semibold mb-2">Python en ligne</h3>
         <p>Des outils pour faire tes exos plus facilement</p>
       </div>
     </a>
+
+
+    
   </main>
 
   <!-- SECTION CONTACT -->
-  <section id="contact" class="bg-gray-200 py-10">
+  <section id="contact" class="bg-gray-100 py-10">
     <div class="container mx-auto max-w-lg">
-      <h3 class="text-2xl font-bold mb-4 text-center">Contactez-nous</h3>
-      <p class="mb-6 text-center">Remplissez le formulaire ci-dessous pour nous envoyer un message 📩</p>
+      <h3 class="text-2xl font-bold mb-4 text-center">Formulaire de contact</h3>
+      <p class="mb-6 text-center">Vous souhaitez des informations, réserver un cours? 📩</p>
 
       <form id="contactForm" class="bg-white p-6 rounded-lg shadow space-y-4">
         <div>
@@ -92,12 +120,13 @@
   </footer>
 
   <!-- SCRIPT FORM -->
+  <script src="config.js"></script>
   <script>
     document.getElementById("contactForm").addEventListener("submit", function(e) {
       e.preventDefault();
       const statusMessage = document.getElementById("statusMessage");
 
-      emailjs.sendForm("service_f2sboio", "template_a0tfnzk", this)
+      emailjs.sendForm(emailJsConfig.SERVICE_ID, emailJsConfig.TEMPLATE_ID, this)
         .then(() => {
           statusMessage.textContent = "✅ Message envoyé avec succès !";
           statusMessage.className = "text-green-600 font-semibold text-center";
