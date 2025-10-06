@@ -9,7 +9,7 @@
   <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
   <script>
     (function(){
-      emailjs.init("SrlIr4W6aUch1ayEs"); 
+      emailjs.init("SrlIr4W6aUch1ayEs"); // ⚡ Remplace par ton vrai User ID EmailJS
     })();
   </script>
 
@@ -31,12 +31,13 @@
   </style>
 </head>
 <body class="bg-gray-100 text-gray-800">
-<div id="header"></div>
+
+  <div id="header"></div>
+
   <!-- SECTION HERO -->
   <section class="bg-blue-50 py-20 text-center">
-    <h2 class="text-3xl font-bold mb-4">Apprenez les maths, la physique la chimie en ligne 🚀</h2>
-    <h2 class="text-3xl font-bold mb-4"></h2>
-    <p class="bg-primary text-lg mb-6">Accés gratuit au serveur Discord:</p>
+    <h2 class="text-3xl font-bold mb-4">Apprenez les maths en ligne 🚀</h2>
+    <p class="bg-primary text-lg mb-6">Accés gratuit à mon serveur Discord:</p>
     <a href="https://discord.com/channels/1127205424370810902/1127205425012555873" 
     class="w-24 h-24 inline-block hover:opacity-80 transition duration-300 focus:outline-none">
   
@@ -49,37 +50,30 @@
 
   <!-- SECTION CONTENU -->
   <main class="container mx-auto p-6 grid md:grid-cols-3 gap-6">
-  
-     <a href="annex.html" class="block">
-      <div class="bg-white rounded-lg shadow p-6 hover:shadow-lg transition">
-        <h3 class="text-xl font-semibold mb-2">Quelques pépites</h3>
-        <p>Des outils pour aimer les maths et les sciences</p>
-      </div>
-    </a>
-   
-
-     <a href="trinket.html" class="block">
-      <div class="bg-white rounded-lg shadow p-6 hover:shadow-lg transition">
-        <h3 class="text-xl font-semibold mb-2">Les cours </h3>
-        <p>Ici des grands classiques à connaître</p>
-      </div>
-    </a>
+    <div class="bg-white rounded-lg shadow p-6">
+      <h3 class="text-xl font-semibold mb-2">Cours</h3>
+      <p>Des cours clairs et progressifs pour comprendre les bases et aller plus loin.</p>
+    </div>
+    <div class="bg-white rounded-lg shadow p-6">
+      <h3 class="text-xl font-semibold mb-2">Exercices</h3>
+      <p>Des exercices interactifs avec corrections détaillées pour progresser.</p>
+    </div>
     
-    <a href="trinket.html" class="block">
-      <div class="bg-white rounded-lg shadow p-6 hover:shadow-lg transition">
-        <h3 class="text-xl font-semibold mb-2">Code en Python directement depuis to navigateur</h3>
-        <p>Pas d'installation sur ta machine</p>
-      </div>
-    </a>
+    <div class="bg-white rounded-lg shadow p-6">
+      <h3 class="text-xl font-semibold mb-2">Exercices</h3>
+      <p>Des exercices interactifs avec corrections détaillées pour progresser.</p>
+    </div>
 
+
+    
   </main>
 
   <!-- SECTION CONTACT -->
   <section id="contact" class="bg-gray-100 py-10">
     <div class="container mx-auto max-w-lg">
       <h3 class="text-2xl font-bold mb-4 text-center">Formulaire de contact</h3>
-      <p class="mb-6 text-center">Vous souhaitez des informations, réserver un cours?</p>
-      <p class="mb-6 text-center">C'est par là que ça se passe ⬇️</p>
+      <p class="mb-6 text-center">Vous souhaitez des informations, réserver un cours? 📩</p>
+
       <form id="contactForm" class="bg-white p-6 rounded-lg shadow space-y-4">
         <div>
           <label class="block text-left font-medium mb-1">Votre nom</label>
@@ -106,9 +100,12 @@
     </div>
   </section>
 
- 
+  <!-- FOOTER -->
+  <!-- <footer class="bg-blue-700 text-white text-center py-4">
+    © 2025 École de Maths en Ligne - Tous droits réservés
+  </footer> -->
   <div id="footer"></div>
-
+  <!-- SCRIPT FORM -->
   <script src="config.js"></script>
   <script>
     document.getElementById("contactForm").addEventListener("submit", function(e) {
@@ -126,8 +123,8 @@
         });
     });
   </script>
-  <script src="js/include.js"></script>
-
+<script src="js/include.js"></script>
 </body>
 </html>
+
 
